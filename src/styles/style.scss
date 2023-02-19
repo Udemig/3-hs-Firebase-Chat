@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Inter:wght@100;200;300;400;500;600;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins';
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #222831;
+}
+// 393E46
+.auth {
+  h1 {
+    font-size: 35px;
+    font-family: 'Iceberg';
+  }
+  background-color: white;
+  width: 40vh;
+  height: 40vh;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+
+  button {
+    background-color: #00adb5;
+    border-radius: 5px;
+    padding: 4px;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.452);
+    img {
+      width: 30px;
+      filter: drop-shadow(5px 5px 5px white);
+    }
+    cursor: pointer;
+    &:hover {
+      background-color: #00858d;
+    }
+  }
+}
+
+// ODA SEÇME COMP.
+.room-container {
+  background-color: white;
+  width: 70vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 100px;
+  border-radius: 50px;
+
+  h1 {
+    font-family: 'Iceberg';
+    font-size: 35px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  label {
+    font-size: 27px;
+    text-align: center;
+  }
+  input {
+    padding: 7px 14px;
+    border-radius: 10px;
+  }
+  button {
+    font-family: 'Inter';
+    background-color: #00dde9;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    &:hover {
+      background-color: #00adb5;
+    }
+  }
+}
+
+.chat {
+  background-color: white;
+  width: 70vh;
+  height: 70vh;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ff2e63;
+    border-radius: 10px 10px 0 0;
+    p {
+      color: white;
+    }
+    a {
+      padding: 5px 10px;
+      text-decoration: none;
+      background-color: #00dde9;
+      font-family: 'Inter';
+      color: white;
+      text-shadow: 2px 2px 20px black;
+      cursor: pointer;
+      font-weight: 400;
+      border-radius: 4px;
+      &:hover {
+        background-color: #00adb5;
+      }
+    }
+  }
+}
+
+.messages {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .user-message {
+    display: flex;
+    gap: 20px;
+    flex-direction: row-reverse;
+    .text {
+      background: #00dde9;
+      color: white;
+      padding: 4px;
+      border-radius: 7px 7px 0 7px;
+    }
+  }
+  .message {
+    display: flex;
+    gap: 20px;
+    .user {
+      font-weight: bold;
+    }
+  }
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  input {
+    margin: 20px;
+    padding: 10px 20px;
+    width: 60%;
+    border-radius: 10px;
+    outline: none;
+    &:focus {
+      border: 1px solid #00858d;
+    }
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #00dde9;
+    color: white;
+    cursor: pointer;
+  }
+}

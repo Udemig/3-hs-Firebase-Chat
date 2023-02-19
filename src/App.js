@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/style.css';
+import Auth from './components/Auth';
+import { useRef, useState } from 'react';
+import Chat from './components/Chat';
 
 function App() {
+  const [isAuth, setIsAuth] = useState(localStorage.getItem('token'));
+  const [room, setRoom] = useState(null);
+  const inputRef = useRef(null);
+
+  if (!isAuth) {
+    return (
+      <div className="container">
+        <Auth setIsAuth={setIsAuth} />
+      </div>
+    );
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      {room ? (
+        <Chat room={room} />
+      ) : (
+        <div className="room-container">
+          <h1>Chat Odası</h1>
+          <label>Hangi Odaya Gireceksin ?</label>
+          <input ref={inputRef} type="text" />
+          <button
+            onClick={() => {
+              setRoom(inputRef.current.value);
+            }}
+          >
+            Odaya Gir
+          </button>
+        </div>
+      )}
     </div>
   );
 }
